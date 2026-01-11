@@ -51,6 +51,11 @@
     setCookie("_perf_session_id", "perf_" + Math.random().toString(36).substr(2, 9), 7);
 
 })();
+    localStorage.setItem("analytics_test_id", "test_analytics_123");
+localStorage.setItem("performance_metrics", JSON.stringify({
+    ttfb: 120,
+    domLoad: 340
+}));
     const switchBtn = document.getElementById("switch");
     let clickCount = 0;
 
@@ -69,4 +74,5 @@
 
 </body>
 </html>
+
 
