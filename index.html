@@ -26,6 +26,31 @@
 </div>
 
 <script>
+    (function () {
+    // Helper to set cookies
+    function setCookie(name, value, days) {
+        const expires = new Date(Date.now() + days * 864e5).toUTCString();
+        document.cookie =
+            name + "=" + encodeURIComponent(value) +
+            "; expires=" + expires +
+            "; path=/" +
+            "; SameSite=Lax";
+    }
+
+    /* ===============================
+       ANALYTICS COOKIES (Test)
+    =============================== */
+    setCookie("_ga", "GA1.2.123456789.1234567890", 365);
+    setCookie("_gid", "GA1.2.987654321.9876543210", 1);
+    setCookie("_gat", "1", 1);
+
+    /* ===============================
+       PERFORMANCE COOKIES (Test)
+    =============================== */
+    setCookie("_perf_load_time", "120ms", 7);
+    setCookie("_perf_session_id", "perf_" + Math.random().toString(36).substr(2, 9), 7);
+
+})();
     const switchBtn = document.getElementById("switch");
     let clickCount = 0;
 
@@ -44,3 +69,4 @@
 
 </body>
 </html>
+
