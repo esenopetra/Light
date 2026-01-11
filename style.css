@@ -1,0 +1,153 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body {
+    height: 100vh;
+    background: #000;
+    transition: background 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+body.on {
+    background: #fff;
+}
+
+/* ================= BULB LAYOUT ================= */
+.bulb-wrapper {
+    position: absolute;
+    top: -110px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.wire {
+    width: 2px;
+    height: 70px;
+    background: #333;
+    margin: 0 auto;
+}
+
+/* ============ YOUR BULB DESIGN ============ */
+.bulb {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    background: #444;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+body.on .bulb {
+    background: #fff;
+    box-shadow:
+        0 0 50px #fff,
+        0 0 100px #fff,
+        0 0 150px #fff,
+        0 0 280px #fff,
+        0 0 250px #fff,
+        0 0 300px #fff,
+        0 0 350px #fff;
+}
+
+.bulb::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: 22.5px;
+    width: 35px;
+    height: 80px;
+    background: #444;
+    border-top: 30px solid #000;
+    border-radius: 10px;
+}
+
+body.on .bulb::before {
+    background: #fff;
+}
+
+body.on .bulb::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 120px;
+    height: 120px;
+    background: #fff;
+    border-radius: 50%;
+    filter: blur(40px);
+}
+
+.bulb span:nth-child(1) {
+    position: absolute;
+    top: -16px;
+    left: -4px;
+    display: block;
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    transform: rotate(342deg);
+    border-bottom-right-radius: 40px;
+    box-shadow: 20px 20px 0 10px #444;
+}
+
+body.on .bulb span:nth-child(1) {
+    box-shadow: 20px 20px 0 10px #fff;
+}
+
+.bulb span:nth-child(2) {
+    position: absolute;
+    top: -16px;
+    right: -4px;
+    display: block;
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    transform: rotate(17deg);
+    border-bottom-left-radius: 40px;
+    box-shadow: -20px 20px 0 10px #444;
+}
+
+body.on .bulb span:nth-child(2) {
+    box-shadow: -20px 20px 0 10px #fff;
+}
+
+/* ================= SWITCH ================= */
+.switch-container {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+}
+
+.wall-switch {
+    width: 50px;
+    height: 80px;
+    background: #f1f1f1;
+    border-radius: 6px;
+    box-shadow:
+        inset 0 0 6px rgba(0,0,0,0.3),
+        0 4px 10px rgba(0,0,0,0.6);
+    cursor: pointer;
+}
+
+.rocker {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#ffffff, #dcdcdc);
+    border-radius: 6px;
+    transition: transform 0.25s ease;
+}
+
+.wall-switch.off .rocker {
+    transform: rotateX(8deg);
+}
+
+.wall-switch.on .rocker {
+    transform: rotateX(-8deg);
+}

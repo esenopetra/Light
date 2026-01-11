@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>The Torch</title>
+
+<link rel="icon" type="image/png" href="favicon.png" />
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        cursor: none;
+    }
+
+    html, body {
+        height: 100%;
+        overflow: hidden; /* No scroll */
+        background: black;
+        font-family: Arial, sans-serif;
+        color: white;
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .content {
+        flex: 1 1 auto; /* Fill remaining space */
+        padding: 20px 60px 40px 60px;
+        font-size: 20px;
+        line-height: 1.5;
+        overflow: hidden;
+
+        /* TEXT MASK */
+        --x: 50%;
+        --y: 50%;
+
+        mask-image: radial-gradient(
+            circle 80px at var(--x) var(--y),
+            white 0%,
+            white 30%,
+            transparent 60%
+        );
+
+        -webkit-mask-image: radial-gradient(
+            circle 80px at var(--x) var(--y),
+            white 0%,
+            white 30%,
+            transparent 60%
+        );
+    }
+
+    footer {
+        flex: 0 0 30px;
+        font-size: 12px;
+        color: #aaa;
+        background: rgba(0, 0, 0, 0.6);
+        padding: 5px 40px;
+        text-align: right;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        user-select: none;
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        z-index: 20;
+    }
+
+    .glow {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        background: radial-gradient(
+            circle 80px at var(--x) var(--y),
+            rgba(255, 255, 0, 0.25),
+            rgba(0, 0, 0, 0.95) 70%
+        );
+        z-index: 5;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="content">
+    <h1>Light Reveals Truth</h1>
+
+    <p>
+        You cannot see anything in the darkness. Life is often like this—full of uncertainty and hidden paths. Failures, mistakes, and fears hide in the shadows. But even the smallest spark can reveal what is hidden.
+    </p>
+
+    <p>
+        All you need is a torch—a little light. Move carefully, step by step, and you will begin to see. The obstacles that seemed impossible, the paths that seemed closed, all start to take shape when illuminated.
+    </p>
+
+    <p>
+        Every shadow teaches you something. Every failure is a lesson. Darkness is not the enemy—it is the canvas upon which light draws your way.
+    </p>
+
+    <p>
+        In life, the torch is persistence, hope, and courage. Pass it over your doubts and fears. Let it touch the unknown corners of your world. Only then can you truly see, learn, and grow.
+    </p>
+
+    <p>
+        Remember: The world is always there, even when hidden. Your task is simple—shine the light, explore, and discover. Darkness cannot hide what is meant to be revealed.
+    </p>
+</div>
+
+<footer>By Abhinav Selvarajan</footer>
+
+<div class="glow"></div>
+
+<script>
+    const content = document.querySelector('.content');
+    const glow = document.querySelector('.glow');
+
+    document.addEventListener('mousemove', e => {
+        const x = e.clientX + 'px';
+        const y = e.clientY + 'px';
+
+        content.style.setProperty('--x', x);
+        content.style.setProperty('--y', y);
+
+        glow.style.setProperty('--x', x);
+        glow.style.setProperty('--y', y);
+    });
+</script>
+
+</body>
+</html>
