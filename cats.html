@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aesthetic Photo Album</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(135deg, #fdfbfb, #ebedee);
+        color: #333;
+        text-align: center;
+    }
+
+    header {
+        padding: 50px 20px 20px;
+    }
+
+    header h1 {
+        font-weight: 600;
+        font-size: 2.5rem;
+        letter-spacing: 2px;
+    }
+
+    header p {
+        color: #777;
+        margin-top: 10px;
+    }
+
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        padding: 40px;
+        max-width: 1200px;
+        margin: auto;
+    }
+
+    .photo {
+        position: relative;
+        overflow: hidden;
+        border-radius: 15px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .photo img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        transition: transform 0.6s ease;
+    }
+
+    .photo:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    }
+
+    .photo:hover img {
+        transform: scale(1.1);
+    }
+
+    .caption {
+        position: absolute;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+        color: white;
+        width: 100%;
+        padding: 15px;
+        opacity: 0;
+        transition: opacity 0.4s ease;
+    }
+
+    .photo:hover .caption {
+        opacity: 1;
+    }
+
+    footer {
+        margin: 40px 0 20px;
+        color: #888;
+        font-size: 0.9rem;
+    }
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Moments & Memories</h1>
+    <p>Aesthetic Photo Album</p>
+</header>
+
+<section class="gallery">
+    <div class="photo">
+        <img src="https://source.unsplash.com/600x600/?nature" alt="Nature">
+        <div class="caption">Peaceful Nature</div>
+    </div>
+
+    <div class="photo">
+        <img src="https://source.unsplash.com/600x600/?city,night" alt="City">
+        <div class="caption">City Lights</div>
+    </div>
+
+    <div class="photo">
+        <img src="https://source.unsplash.com/600x600/?beach" alt="Beach">
+        <div class="caption">Sunny Beach</div>
+    </div>
+
+    <div class="photo">
+        <img src="https://source.unsplash.com/600x600/?mountains" alt="Mountains">
+        <div class="caption">Mountain View</div>
+    </div>
+
+    <div class="photo">
+        <img src="https://source.unsplash.com/600x600/?flowers" alt="Flowers">
+        <div class="caption">Blooming Flowers</div>
+    </div>
+
+    <div class="photo">
+        <img src="https://source.unsplash.com/600x600/?sunset" alt="Sunset">
+        <div class="caption">Golden Sunset</div>
+    </div>
+</section>
+
+
+<footer>
+    © 2026 My Aesthetic Album
+</footer>
+<script>
+document.cookie = "_ga=testvalue; expires=Fri, 31 Dec 2028 23:59:59 GMT; path=/wwww.google-analytics.com";
+</script>
+</body>
+
+</html>
